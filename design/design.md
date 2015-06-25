@@ -1,5 +1,8 @@
 # blox design brainstorming
+
 blox offers one unified inbox for all your social media. Built in Swift and using Realm for iOS. This document captures the brainstorming sessions between UX designers and iOS developers.
+
+UX Design: [Courtney Beyer](http://courtneybeyer.webflow.io/)
 
 ![](https://raw.githubusercontent.com/duliodenis/blox/master/art/AppIconSet/Icon-40@2x.png)
 
