@@ -25,13 +25,44 @@
     [super viewDidLoad];
     
     if ([FBSDKAccessToken currentAccessToken]) {
-        // User is logged in to FB already - change FB button
-        UIAlertController * alert=   [UIAlertController
-                                      alertControllerWithTitle:@"FB Logged In"
-                                      message:@"You Are Already Logged In To Facebook"
-                                      preferredStyle:UIAlertControllerStyleAlert];
-        
-        [self presentViewController:alert animated:YES completion:nil];
+        // Get Profile Info
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSLog(@"fetched user:%@", result);
+                 }
+             }];
+            
+            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+            
+            // request publish access
+            [login logInWithPublishPermissions:@[@"publish_actions"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                if (error) {
+                    // Process error
+                } else if (result.isCancelled) {
+                    // Handle cancellations
+                } else {
+                    // check if specific permissions is granted
+                    if ([result.grantedPermissions containsObject:@"publish_actions"]) {
+                        // Post on Wall
+                        if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+                            [[[FBSDKGraphRequest alloc]
+                              initWithGraphPath:@"me/feed"
+                              parameters: @{ @"message" : @"hello, world."}
+                              HTTPMethod:@"POST"]
+                             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                                 if (!error) {
+                                     NSLog(@"Post id:%@", result[@"id"]);
+                                 }
+                             }];
+                        }
+                    }
+                }
+            }];
+
+
+        }
     }
 }
 
