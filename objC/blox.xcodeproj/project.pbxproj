@@ -15,6 +15,7 @@
 		6C9E9D381B3A111F00E27ECC /* bloxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E9D371B3A111F00E27ECC /* bloxTests.m */; };
 		6C9E9D431B3A171300E27ECC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9E9D421B3A171300E27ECC /* FBSDKCoreKit.framework */; };
 		6CCF1B931B3DDF0F008A8747 /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF1B921B3DDF0F008A8747 /* InboxViewController.m */; };
+		6CCF1B971B3DFF92008A8747 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCF1B961B3DFF92008A8747 /* SWRevealViewController.m */; };
 		6CF7BF4F1B3B08AD00CF52B6 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF7BF4E1B3B08AD00CF52B6 /* ConnectionsViewController.m */; };
 		6CF7BF511B3B09D500CF52B6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF7BF501B3B09D500CF52B6 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 		6C9E9D421B3A171300E27ECC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = SOURCE_ROOT; };
 		6CCF1B911B3DDF0F008A8747 /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		6CCF1B921B3DDF0F008A8747 /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		6CCF1B951B3DFF92008A8747 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SlideOutMenu/SWRevealViewController.h; sourceTree = "<group>"; };
+		6CCF1B961B3DFF92008A8747 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SlideOutMenu/SWRevealViewController.m; sourceTree = "<group>"; };
 		6CF7BF4D1B3B08AD00CF52B6 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
 		6CF7BF4E1B3B08AD00CF52B6 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 		6CF7BF501B3B09D500CF52B6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = SOURCE_ROOT; };
@@ -105,6 +108,7 @@
 		6C9E9D1B1B3A111E00E27ECC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CCF1B941B3DFF7D008A8747 /* SlideOutMenu */,
 				6C9E9D1F1B3A111E00E27ECC /* AppDelegate.h */,
 				6C9E9D201B3A111E00E27ECC /* AppDelegate.m */,
 				6C9E9D281B3A111E00E27ECC /* Images.xcassets */,
@@ -138,6 +142,15 @@
 				6C9E9D421B3A171300E27ECC /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CCF1B941B3DFF7D008A8747 /* SlideOutMenu */ = {
+			isa = PBXGroup;
+			children = (
+				6CCF1B951B3DFF92008A8747 /* SWRevealViewController.h */,
+				6CCF1B961B3DFF92008A8747 /* SWRevealViewController.m */,
+			);
+			name = SlideOutMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +255,7 @@
 			files = (
 				6CF7BF4F1B3B08AD00CF52B6 /* ConnectionsViewController.m in Sources */,
 				6C9E9D211B3A111E00E27ECC /* AppDelegate.m in Sources */,
+				6CCF1B971B3DFF92008A8747 /* SWRevealViewController.m in Sources */,
 				6C9E9D1E1B3A111E00E27ECC /* main.m in Sources */,
 				6CCF1B931B3DDF0F008A8747 /* InboxViewController.m in Sources */,
 			);
