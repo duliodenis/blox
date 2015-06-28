@@ -7,9 +7,11 @@
 //
 
 #import "InboxViewController.h"
+#import "SWRevealViewController.h"
 
-@interface InboxViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface InboxViewController () <UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButtonItem;
 @property (nonatomic) NSArray *stream;
 
 @end
@@ -26,6 +28,12 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // The Left Bar Button: the Slide Out Menu
+    self.revealViewController.delegate = self;
+    self.menuBarButtonItem.target = self.revealViewController;
+    self.menuBarButtonItem.action = @selector(revealToggle:);
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 

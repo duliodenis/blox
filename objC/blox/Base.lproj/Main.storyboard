@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u4J-XT-Us2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pBP-Kl-T4g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -67,13 +67,60 @@
                             <constraint firstAttribute="centerY" secondItem="UzE-25-gBe" secondAttribute="centerY" constant="-5" id="nd5-Dn-x7g"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8gr-FO-rDh">
+                        <barButtonItem key="leftBarButtonItem" image="SlideOutMenuIcon" id="y18-XP-1of"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="menuBarButtonItem" destination="y18-XP-1of" id="fca-rf-QHs"/>
                         <outlet property="tableView" destination="UzE-25-gBe" id="e4u-H5-4Z7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXt-e6-AtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1033" y="206"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="4PF-J7-VTZ">
+            <objects>
+                <viewController id="pBP-Kl-T4g" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fy7-1W-06K"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGL-4f-fz6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RlD-r2-yhL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Zga-Ut-I7H" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="a0L-22-0lX"/>
+                        <segue destination="vXZ-lx-hvc" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="c1l-0a-RPm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5b-Xs-hrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AtF-x8-oQZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zga-Ut-I7H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yFV-Ms-svq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u4J-XT-Us2" kind="relationship" relationship="rootViewController" id="zPK-Z7-fPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZ2-TJ-G3n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="221" y="206"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SlideOutMenuIcon" width="22" height="22"/>
+    </resources>
 </document>

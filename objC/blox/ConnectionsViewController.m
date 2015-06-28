@@ -33,9 +33,11 @@
                      NSLog(@"fetched user:%@", result);
                  }
              }];
-            
+
+            /* Confirmed working for posting on FB Wall - move to PostViewController
+             
             FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-            
+
             // request publish access
             [login logInWithPublishPermissions:@[@"publish_actions"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
                 if (error) {
@@ -60,7 +62,7 @@
                     }
                 }
             }];
-
+*/
 
         }
     }
