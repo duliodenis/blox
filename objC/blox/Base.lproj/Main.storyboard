@@ -40,7 +40,90 @@
             </objects>
             <point key="canvasLocation" x="221" y="904"/>
         </scene>
-        <!--Inbox View Controller-->
+        <!--Compose View Controller-->
+        <scene sceneID="J59-s7-kaS">
+            <objects>
+                <viewController id="dS3-I5-zjp" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jzJ-10-mnB"/>
+                        <viewControllerLayoutGuide type="bottom" id="j70-Uq-XAY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2BX-On-lRp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bc-Eo-qVC">
+                                <rect key="frame" x="239" y="550" width="122" height="30"/>
+                                <state key="normal" title="Post to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postMessage:" destination="dS3-I5-zjp" eventType="touchUpInside" id="Hgl-El-4Sp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="What's on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="x3N-N6-YSB">
+                                <rect key="frame" x="89" y="72" width="423" height="183"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="48e-wl-1GY"/>
+                                    <constraint firstAttribute="width" constant="423" id="C5v-Xl-AhV">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="283"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="283" id="ID5-OA-Ypx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="48e-wl-1GY"/>
+                                        <exclude reference="ID5-OA-Ypx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="48e-wl-1GY"/>
+                                        <exclude reference="C5v-Xl-AhV"/>
+                                        <include reference="ID5-OA-Ypx"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="x3N-N6-YSB" secondAttribute="centerY" constant="136.5" id="GsB-bZ-8TK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="190.5"/>
+                            </constraint>
+                            <constraint firstItem="x3N-N6-YSB" firstAttribute="top" secondItem="jzJ-10-mnB" secondAttribute="bottom" constant="60" id="I1h-ew-MWV"/>
+                            <constraint firstAttribute="centerX" secondItem="1bc-Eo-qVC" secondAttribute="centerX" id="PB5-T9-SDm"/>
+                            <constraint firstItem="j70-Uq-XAY" firstAttribute="top" secondItem="1bc-Eo-qVC" secondAttribute="bottom" constant="20" id="T8Y-qE-x94"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x3N-N6-YSB" secondAttribute="trailing" constant="29" id="bNt-DJ-r7C"/>
+                            <constraint firstItem="x3N-N6-YSB" firstAttribute="leading" secondItem="2BX-On-lRp" secondAttribute="leadingMargin" constant="56" id="iU3-bq-O7e"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="I1h-ew-MWV"/>
+                                <exclude reference="bNt-DJ-r7C"/>
+                                <exclude reference="iU3-bq-O7e"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="GsB-bZ-8TK"/>
+                                <include reference="I1h-ew-MWV"/>
+                                <include reference="bNt-DJ-r7C"/>
+                                <include reference="iU3-bq-O7e"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="post" destination="x3N-N6-YSB" id="gta-jt-Zuj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbw-Jw-v38" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="903.75"/>
+        </scene>
+        <!--blox-->
         <scene sceneID="q1n-gl-PCe">
             <objects>
                 <viewController storyboardIdentifier="InboxViewController" id="u4J-XT-Us2" customClass="InboxViewController" sceneMemberID="viewController">
@@ -56,7 +139,9 @@
                                 <rect key="frame" x="0.0" y="5" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="UzE-25-gBe" secondAttribute="height" multiplier="1:1" id="Y9p-DP-TnM"/>
+                                    <constraint firstAttribute="width" secondItem="UzE-25-gBe" secondAttribute="height" multiplier="1:1" id="Y9p-DP-TnM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-336"/>
+                                    </constraint>
                                 </constraints>
                             </tableView>
                         </subviews>
@@ -64,11 +149,18 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="UzE-25-gBe" secondAttribute="centerX" id="UPz-rb-9ud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UzE-25-gBe" secondAttribute="trailing" constant="-16" id="kGv-X3-AhS"/>
-                            <constraint firstAttribute="centerY" secondItem="UzE-25-gBe" secondAttribute="centerY" constant="-5" id="nd5-Dn-x7g"/>
+                            <constraint firstAttribute="centerY" secondItem="UzE-25-gBe" secondAttribute="centerY" constant="-5" id="nd5-Dn-x7g">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-32"/>
+                            </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8gr-FO-rDh">
+                    <navigationItem key="navigationItem" title="blox" id="8gr-FO-rDh">
                         <barButtonItem key="leftBarButtonItem" image="SlideOutMenuIcon" id="y18-XP-1of"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PnU-pH-QA8">
+                            <connections>
+                                <segue destination="dS3-I5-zjp" kind="show" id="dQ0-4h-QsJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuBarButtonItem" destination="y18-XP-1of" id="fca-rf-QHs"/>
@@ -77,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CXt-e6-AtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="206"/>
+            <point key="canvasLocation" x="1032" y="205.5"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="4PF-J7-VTZ">

@@ -33,37 +33,6 @@
                      NSLog(@"fetched user:%@", result);
                  }
              }];
-
-            /* Confirmed working for posting on FB Wall - move to PostViewController
-             
-            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-
-            // request publish access
-            [login logInWithPublishPermissions:@[@"publish_actions"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-                if (error) {
-                    // Process error
-                } else if (result.isCancelled) {
-                    // Handle cancellations
-                } else {
-                    // check if specific permissions is granted
-                    if ([result.grantedPermissions containsObject:@"publish_actions"]) {
-                        // Post on Wall
-                        if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
-                            [[[FBSDKGraphRequest alloc]
-                              initWithGraphPath:@"me/feed"
-                              parameters: @{ @"message" : @"hello, world."}
-                              HTTPMethod:@"POST"]
-                             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                                 if (!error) {
-                                     NSLog(@"Post id:%@", result[@"id"]);
-                                 }
-                             }];
-                        }
-                    }
-                }
-            }];
-*/
-
         }
     }
 }

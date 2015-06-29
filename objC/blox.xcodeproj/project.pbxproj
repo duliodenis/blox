@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C6856851B407A8100164EB3 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6856841B407A8100164EB3 /* ComposeViewController.m */; };
 		6C9E9D1E1B3A111E00E27ECC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E9D1D1B3A111E00E27ECC /* main.m */; };
 		6C9E9D211B3A111E00E27ECC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E9D201B3A111E00E27ECC /* AppDelegate.m */; };
 		6C9E9D271B3A111E00E27ECC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C9E9D251B3A111E00E27ECC /* Main.storyboard */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C6856831B407A8100164EB3 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		6C6856841B407A8100164EB3 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		6C9E9D181B3A111E00E27ECC /* blox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9E9D1C1B3A111E00E27ECC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C9E9D1D1B3A111E00E27ECC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				6CF7BF4E1B3B08AD00CF52B6 /* ConnectionsViewController.m */,
 				6CCF1B911B3DDF0F008A8747 /* InboxViewController.h */,
 				6CCF1B921B3DDF0F008A8747 /* InboxViewController.m */,
+				6C6856831B407A8100164EB3 /* ComposeViewController.h */,
+				6C6856841B407A8100164EB3 /* ComposeViewController.m */,
 				6C9E9D251B3A111E00E27ECC /* Main.storyboard */,
 				6C9E9D2A1B3A111E00E27ECC /* LaunchScreen.xib */,
 				6C9E9D1B1B3A111E00E27ECC /* Supporting Files */,
@@ -255,6 +260,7 @@
 			files = (
 				6CF7BF4F1B3B08AD00CF52B6 /* ConnectionsViewController.m in Sources */,
 				6C9E9D211B3A111E00E27ECC /* AppDelegate.m in Sources */,
+				6C6856851B407A8100164EB3 /* ComposeViewController.m in Sources */,
 				6CCF1B971B3DFF92008A8747 /* SWRevealViewController.m in Sources */,
 				6C9E9D1E1B3A111E00E27ECC /* main.m in Sources */,
 				6CCF1B931B3DDF0F008A8747 /* InboxViewController.m in Sources */,
