@@ -25,12 +25,12 @@
     [super viewDidLoad];
     
     if ([FBSDKAccessToken currentAccessToken]) {
-        // Get Profile Info
+        // If logged in get Profile ID
         if ([FBSDKAccessToken currentAccessToken]) {
             [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
              startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                  if (!error) {
-                     NSLog(@"fetched user:%@", result);
+                     NSLog(@"fetched user id:%@", result[@"id"]);
                  }
              }];
         }

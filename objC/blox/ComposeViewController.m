@@ -1,5 +1,5 @@
 //
-//  PostViewController.m
+//  ComposeViewController.m
 //  blox
 //
 //  Created by Dulio Denis on 6/28/15.

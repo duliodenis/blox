@@ -8,11 +8,12 @@
 
 #import "InboxViewController.h"
 #import "SWRevealViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface InboxViewController () <UITableViewDataSource, UITableViewDelegate, SWRevealViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButtonItem;
-@property (nonatomic) NSArray *stream;
+@property (nonatomic) NSMutableArray *stream;
 
 @end
 
@@ -21,9 +22,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.stream = @[@"Hello, World.", @"Second Post"];
+    self.stream = [NSMutableArray array];
     
-    // Read Facebook Stream and push into self.stream
+    // Read your Facebook feed, parse and push into self.stream
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // Get Feed
+        if ([FBSDKAccessToken currentAccessToken]) {
+            [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     // get profile ID - this will eventually be kept in the database
+                     //NSString *graphPath = [NSString stringWithFormat:@"/%@/feed", result[@"id"]];
+                     
+                     // use hardcoded user to test
+                     NSString *graphPath = [NSString stringWithFormat:@"/137893439617162/feed"];
+                     [[[FBSDKGraphRequest alloc] initWithGraphPath:graphPath parameters:nil]
+                      startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id feed, NSError *error) {
+                          if (!error) {
+                              // parse feed result
+                              // NSLog(@"fetched feed:%@", feed);
+                              NSArray *list = [feed valueForKey:@"data"];
+
+                              for (NSDictionary *dic in list) {
+                                  //NSLog(@"id : %@",[dic valueForKey:@"id"]);
+                                  //NSLog(@"type : %@",[dic valueForKey:@"type"]);
+                                  if ([[dic valueForKey:@"type"] isEqualToString:@"status"]) {
+                                      NSLog(@"- message : %@",[dic valueForKey:@"message"]);
+                                      [self.stream addObject:[dic valueForKey:@"message"]];
+                                  } else if([[dic valueForKey:@"type"] isEqualToString:@"link"]){
+                                      //NSLog(@"- link : %@",[dic valueForKey:@"link"]);
+                                  } else if([[dic valueForKey:@"type"] isEqualToString:@"photo"]){
+                                      //NSLog(@"- icon : %@",[dic valueForKey:@"icon"]);
+                                      NSLog(@"- message : %@",[dic valueForKey:@"message"]);
+                                  }
+                                  NSLog(@"------");
+                              }
+                              dispatch_async(dispatch_get_main_queue(), ^{
+                                  [self.tableView reloadData];
+                              });
+                          }
+                      }];
+                 }
+             }];
+        }
+    }
     
     
     self.tableView.delegate = self;
